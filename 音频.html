@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 使用 <embed> 元素 -->
+		<embed height="100" width="100" src="../i/horse.mp3"></embed>
+		<p><b>注释：</b>浏览器可能需要安装插件以后，才能播放该文件。</p>
+		<!-- 使用 <object> 元素 -->
+		<object height="100" width="100" data="../i/song.mp3"></object>
+		<p><b>注释：</b>浏览器可能需要安装插件以后，才能播放该文件。</p>
+		<!-- 使用 HTML5 <audio> 元素 -->
+		<audio controls="controls">
+		  <source src="../i/song.mp3" type="audio/mpeg">
+		  <!-- <source src="../i/horse.mp3" type="audio/mpeg"> -->
+		Your browser does not support the audio element.
+		</audio>
+		<!-- 最好的 HTML 解决方法 -->
+		<audio controls="controls">
+		  <source src="../i/horse.mp3" type="audio/ogg">  <!-- 先尝试以ogg或者mp3格式播放，如果失败退回来尝试embed -->
+		  <source src="../i/horse.mp3" type="audio/mpeg">
+		<embed height="100" width="100" src="../i/horse.mp3" />
+		</audio>
+		<!-- 雅虎媒体播放器(最简单) -->
+		<p><a href="../i/song.mp3">播放 mp3</a></p>
+		<p><a href="../i/minsong.wav">播放 wav</a></p>
+		<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+		<!-- 使用超链接 -->
+		<p><a href="../i/minsong.wav">点击这里 播放音乐</a></p>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#div1 {width:250px; height:100px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script type="text/javascript">
+	// 默认地，数据/元素无法被放置到其他元素中。为了实现拖放，
+	// 我们必须阻止元素的这种默认的处理方式。
+	// 这个任务由 ondragover 事件的 event.preventDefault() 方法完成：
+	// 方法中event可缩写成ev
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+// dataTransfer.setData()方法 设置被拖到数据的数据类型
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)//drop事件的默认行为是以链接形式打开
+{
+ev.preventDefault();//调用prevevtDefault()来阻止浏览器的默认处理方式
+//通过dataTransfer.getData()方法获得被拖数据，返回在setData()方法中设置为相同类型的任何数据
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<p>请把 bilibili 的图片拖放到矩形中：</p>
+<!-- ondrop：当放开被拖数据是，会发生drop事件 -->
+<!-- ondragover事件规定被拖动的数据能够被放置在何处 -->
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br />
+<!-- img draggable=“true”  把元素设置为可拖放 -->
+<img id="drag1" src="../i/bilibili.png" draggable="true" ondragstart="drag(event)" />
+
+</body>
+</html>
