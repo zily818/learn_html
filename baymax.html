@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 定义动画 */
+			/* @keyframes blink{
+				40%{
+					transform: rotate(80deg);
+				}
+				
+			} */
+			
+			body {
+				background-color: #595959;
+			}
+			#baymax{
+				/* 居中 */
+				margin: 0 auto;
+				/* 高度 */
+				height: 600px;
+				/* 隐藏溢出 */
+				overflow: hidden;
+			}
+			#head{
+				height: 60px;
+				width: 100px;
+				border-radius: 50%; /* 以百分比定义圆角的形状 */
+				background: #fff;
+				margin: 0 auto;
+				margin-bottom: -20px;
+				border-bottom: 5px solid #e0e0e0;/* 下边框样式 */
+				/* 设置元素的堆叠顺序：
+				 拥有更高堆叠顺序的元素会处于堆叠顺序较低元素的前面*/
+				z-index: 100;
+				/* 生成相对定位的元素 */
+				position: relative;
+			}
+			#eye1,#eye2{
+				width: 10px;height: 12px;
+				background-color: #282828;
+				border-radius: 100%;
+				position: relative;
+				top: 30px;
+				left: 27px;
+				transform: rotate(8deg);/* 旋转该元素 */
+				/* animation: blink 1s ease-in-out infinite alternate; */
+			}
+			#eye2{
+				/* 使其对称旋转 */
+				transform: rotate(-8deg);
+				left: 69px;
+				top: 18px;
+			}
+			#mouth{
+				width: 38px;
+				height: 2px;
+				background-color: #282828;
+				position: relative;
+				left: 34px;
+				top: 10px;
+			}
+			#torso,#belly{
+				margin: 0 auto;
+				background-color: #FFFFFF;
+				border-radius: 47%;
+				/* 设置边框 */
+				border: 5px solid #E0E0E0;
+				/* border-top: none; */
+				z-index: 1;
+			}
+			#torso{
+				margin-bottom: -150px;
+				height: 200px;width: 180px;
+			}
+			#belly{
+				height: 300px;
+				width: 245px;
+				margin-top: -140;
+				z-index: 5;
+			}
+			#cover{
+				width: 190px;
+				background-color: #FFFFFF;
+				height: 150px;
+				margin: 0 auto;
+				position: relative;
+				top: -20px;
+				border-radius: 50%;
+			}
+			#heart{
+				width: 25px;height: 25px;
+				border-radius: 50%;
+				position: relative;
+				box-shadow: 2px 5px 2px #ccc inset; /* 添加阴影 */
+				right: -115px;
+				top: 40px;
+				z-index: 111;
+				border: 1px solid #ccc;
+			}
+			#leftarm,#rightarm{
+				height: 270px;width: 120px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				margin: 0 auto;
+				position: relative;
+				
+				z-index: -1;
+			}
+			#rightarm{
+				transform: rotate(-20deg);
+				top: -620px;
+				left: 100px;
+			}
+				
+			#leftarm{
+				top: -350px;
+				left: -100px;
+				transform: rotate(20deg);
+			}
+			#leftbigfinger,#rightbigfinger{
+				height: 50px; width: 20px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				position: relative;
+				top: 250px;
+				left: 50px;
+			}
+			#leftbigfinger{
+				
+				transform: rotate(-50deg);
+			}
+			#rightbigfinger{
+				transform: rotate(50deg);
+			}
+			#leftsmallfinger,#rightsmallfinger{
+				height: 35px;width: 15px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				position: relative;
+				top: 195px;
+			}
+			#leftsmallfinger{
+				left: 66px;
+				transform: rotate(-40deg);
+			}
+			#rightsmallfinger{
+				left: 37px;
+				transform: rotate(40deg);
+			}
+			#leftleg,#rightleg{
+				height: 170px; width: 90px;
+				
+				background-color: #FFFFFF;
+				position: relative;
+				margin: 0 auto;
+				z-index: -2;
+				
+			}
+			#leftleg{
+				top: -640px;
+				left: -45px;
+				transform: rotate(-1deg);
+				border-radius: 40% 30% 10px 45%;
+			}
+			#rightleg{
+				top: -810px;
+				left: 50px;
+				transform: rotate(1deg);
+				border-radius: 40% 30% 45% 10px ;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="baymax">
+			<!-- 定义头部，包括两只眼睛，嘴 -->
+			<div id="head">
+				<div id="eye1"></div>
+				<div id="eye2"></div>	
+				<div id="mouth"></div>	
+			</div>
+			
+			<!-- 定义躯干 -->
+			<div id="torso">
+				<div id="heart"></div>
+			</div>
+			<!-- 定义腹部 -->
+			<div id="belly">
+				<div id="cover"></div><!-- cover和躯干的连接处 -->
+			</div>
+			
+			<!-- 定义左臂 包括一大一小两根手指-->
+			<div id="leftarm">
+				<div id="leftbigfinger"></div>
+				<div id="leftsmallfinger"></div>
+			</div>
+			
+			<!-- 定义右臂 包括一大一小两根手指 -->
+			<div id="rightarm">
+				<div id="rightbigfinger"></div>
+				<div id="rightsmallfinger"></div>
+			</div>
+			
+			<!-- 定义左腿 -->
+			<div id="leftleg"></div>
+			
+			<!-- 定义左腿 -->
+			<div id="rightleg"></div>
+		</div>
+	</body>
+</html>
